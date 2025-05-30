@@ -18,14 +18,4 @@ CSS / Bootstrap 5 – Estilização responsiva
 JavaScript – Lógica do front-end e manipulação de dados via localStorage
 LocalStorage – Armazenamento temporário dos dados (sem backend)
 
-/projeto-hotlap/
-├── index.html                  # Tela inicial com listagem de todos os pilotos
-├── CadPiloto.html              # Cadastro e edição de pilotos
-├── ranking_geral.html          # Ranking geral dos melhores tempos
-├── ranking.html                # Ranking por categoria selecionada
-├── /css/
-│   └── style.css              # Estilos customizados
-├── /js/
-│   └── funcoes.js             # Funções JavaScript reutilizáveis
-└── /img/
-    └── icone.jpg              # Imagem usada no navbar
+
