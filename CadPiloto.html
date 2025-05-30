@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro de Pilotos</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"  rel="stylesheet" />
+
+  <!-- Estilo Local -->
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- Funções Compartilhadas -->
+  <script src="./js/funcoes.js"></script>
+
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="img/icone.jpg" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2" />
+        HotLap
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <!-- Home -->
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <!-- Cadastrar Piloto (ativo) -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="CadPiloto.html">Cadastrar Piloto</a>
+          </li>
+
+          <!-- Ranking Geral -->
+          <li class="nav-item">
+            <a class="nav-link" href="ranking_geral.html">Ranking Geral</a>
+          </li>
+
+          <!-- Ranking por Categoria -->
+          <li class="nav-item">
+            <a class="nav-link" href="ranking.html">Ranking por Categoria</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <div class="container-fluid mt-5">
+    <div class="row">
+      <!-- Coluna do Formulário -->
+      <div class="col-md-4">
+        <h2 class="mb-4">Cadastro de Pilotos</h2>
+        <form id="form">
+          <div class="mb-3">
+            <input type="text" id="nome" class="form-control" placeholder="Nome do piloto" required>
+          </div>
+          <div class="mb-3">
+            <input type="text" id="carro" class="form-control" placeholder="Nome do carro" required>
+          </div>
+          <div class="mb-3">
+            <input type="text" id="cronometro" class="form-control" placeholder="Número do cronômetro" required>
+          </div>
+          <div class="mb-3">
+            <input type="text" id="potencia" class="form-control" placeholder="Potência do carro (cv)" required>
+          </div>
+          <div class="mb-3">
+            <input type="text" id="categoria" class="form-control" placeholder="Categoria" required>
+          </div>
+          <div class="mb-3">
+            <input type="text" id="tempo" class="form-control" placeholder="Melhor tempo (opcional)">
+          </div>
+          
+          <button type="submit" class="btn btn-success w-100 mb-3">Cadastrar piloto</button>
+                             
+        </form>
+
+        
+
+      </div>
+
+      <!-- Coluna da Tabela -->
+      <div class="col-md-8">
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered align-middle text-center">
+            <thead class="table-dark">
+              <tr>
+                <th>Nome</th>
+                <th>Carro</th>
+                <th>Cronômetro</th>
+                <th>Potência</th>
+                <th>Categoria</th>
+                <th>Categoria Geral</th>
+                <th>Melhor Tempo</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tabela"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+
+  <!-- Script de Integração com funcoes.js -->
+  <script>
+    // Garante que DOM esteja pronto antes de manipular elementos
+    window.onload = () => {
+      // Carrega os pilotos na tabela
+      carregarPilotosNaTabela("tabela");
+
+      // Salva novo piloto ao submeter o formulário
+      salvarPiloto("form");
+    };
+  </script>
+</body>
+</html>
